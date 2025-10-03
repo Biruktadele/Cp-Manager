@@ -12,6 +12,7 @@ djangorestframework-simplejwt
 djoser
 drf-nested-routers
 drf-yasg
+python-dotenv
 
 # # Real-time communication
 # python-socketio
