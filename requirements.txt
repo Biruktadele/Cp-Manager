@@ -1,9 +1,11 @@
 # Django and Web Server
-Django
+
 gunicorn
 uvicorn
 asgiref
+Django>=5.0
 
+whitenoise 
 # Django REST Framework
 djangorestframework
 djangorestframework-simplejwt
