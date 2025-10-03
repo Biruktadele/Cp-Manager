@@ -157,14 +157,19 @@ AUTHENTICATION_BACKENDS = (
 #         'PORT': '5432',  # Default PostgreSQL port
 #     }
 # }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get("DATABASE_URL"),
+#         conn_max_age=600,
+#         ssl_require=True,
+#     )
+# }
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
-        conn_max_age=600,
-        ssl_require=True,
+        default='sqlite:///db.sqlite3',  # Good for local development fallback
+        conn_max_age=600  # Optional: For persistent connections
     )
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
