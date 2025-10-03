@@ -165,8 +165,8 @@ load_dotenv()
 
 # Replace the DATABASES section of your settings.py with this
 # tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
-# tmpPostgres = urlparse('postgresql://neondb_owner:npg_SqsDG5tkXo9n@ep-wandering-rain-afvy15it-pooler.c-2.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require')
-if not os.environ.get("DATABASE_URL"):
+# tmpPostgres = urlparse('')
+if not os.environ.get("DATABASE_URL") and 0:
     print("Failed")
     DATABASES = {
     'default': dj_database_url.config(
@@ -178,7 +178,7 @@ else:
     print("Successful")
     DATABASES = {
         'default': dj_database_url.config(
-            default=os.environ.get("DATABASE_URL"),
+            default= 'postgresql://neondb_owner:npg_SqsDG5tkXo9n@ep-wandering-rain-afvy15it-pooler.c-2.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require',# os.environ.get("DATABASE_URL"),
             conn_max_age=600,
             # ssl_require=True,
         )
