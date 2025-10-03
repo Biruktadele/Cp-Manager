@@ -159,13 +159,7 @@ AUTHENTICATION_BACKENDS = (
 #         'PORT': '5432',  # Default PostgreSQL port
 #     }
 # }
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default=os.environ.get("DATABASE_URL"),
-#         conn_max_age=600,
-#         ssl_require=True,
-#     )
-# }
+
 # DATABASES = {
 #     'default': dj_database_url.config(
 #         default='sqlite:///db.sqlite3',  # Good for local development fallback
@@ -175,20 +169,26 @@ AUTHENTICATION_BACKENDS = (
 load_dotenv()
 
 # Replace the DATABASES section of your settings.py with this
-tmpPostgres = urlparse(os.environ.get("DATABASE_URL"))
+tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
 # tmpPostgres = urlparse('postgresql://neondb_owner:npg_SqsDG5tkXo9n@ep-wandering-rain-afvy15it-pooler.c-2.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require')
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': tmpPostgres.path.replace('/', ''),
-        'USER': tmpPostgres.username,
-        'PASSWORD': tmpPostgres.password,
-        'HOST': tmpPostgres.hostname,
-        'PORT': 5432,
-        'OPTIONS': dict(parse_qsl(tmpPostgres.query)),
-    }
+    'default': dj_database_url.config(
+        default=tmpPostgres,
+        conn_max_age=600,
+        ssl_require=True,
+    )
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': tmpPostgres.path.replace('/', ''),
+#         'USER': tmpPostgres.username,
+#         'PASSWORD': tmpPostgres.password,
+#         'HOST': tmpPostgres.hostname,
+#         'PORT': 5432,
+#         'OPTIONS': dict(parse_qsl(tmpPostgres.query)),
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
