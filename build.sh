@@ -15,11 +15,11 @@ python manage.py migrate
 # This relies on DJANGO_SUPERUSER_USERNAME, DJANGO_SUPERUSER_EMAIL,
 # and DJANGO_SUPERUSER_PASSWORD being set as environment variables on Render.
 # The '|| true' ensures the build doesn't fail if the user already exists on subsequent deploys.
-if [ -n "$DJANGO_SUPERUSER_USERNAME" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ]; then
-    python manage.py createsuperuser --noinput || true
-else
-    echo "Warning: DJANGO_SUPERUSER_USERNAME or DJANGO_SUPERUSER_PASSWORD not set. Admin user not created during build."
-fi
+# if [ -n "$DJANGO_SUPERUSER_USERNAME" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ]; then
+#     python manage.py createsuperuser --noinput || true
+# else
+#     echo "Warning: DJANGO_SUPERUSER_USERNAME or DJANGO_SUPERUSER_PASSWORD not set. Admin user not created during build."
+# fi
 
 # REMOVED:
 # - python apscheduler_runner.py (should be a separate worker process)

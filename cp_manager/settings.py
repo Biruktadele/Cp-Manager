@@ -175,7 +175,8 @@ AUTHENTICATION_BACKENDS = (
 load_dotenv()
 
 # Replace the DATABASES section of your settings.py with this
-tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
+tmpPostgres = urlparse(os.environ.get("DATABASE_URL"))
+# tmpPostgres = urlparse('postgresql://neondb_owner:npg_SqsDG5tkXo9n@ep-wandering-rain-afvy15it-pooler.c-2.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require')
 
 DATABASES = {
     'default': {
