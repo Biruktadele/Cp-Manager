@@ -135,6 +135,10 @@ ROOT_URLCONF = 'cp_manager.urls'
 
 WSGI_APPLICATION = 'cp_manager.wsgi.application'
 
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
     "django.contrib.auth.backends.ModelBackend",
