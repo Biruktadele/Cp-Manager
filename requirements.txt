@@ -1,0 +1,39 @@
+# Django and Web Server
+Django
+# gunicorn
+# uvicorn
+# asgiref
+
+# Django REST Framework
+djangorestframework
+djangorestframework-simplejwt
+djoser
+drf-nested-routers
+
+# # Real-time communication
+# python-socketio
+# channels
+# channels_redis
+
+# Database
+dj-database-url
+psycopg2-binary
+
+# Static files
+# whitenoise
+
+# Cloud media storage
+cloudinary
+django-cloudinary-storage
+
+# Authentication
+django-allauth
+dj-rest-auth
+google-auth-oauthlib
+
+# Other utilities
+django-crontab
+beautifulsoup4
+apscheduler
+
+requests
