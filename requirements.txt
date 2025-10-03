@@ -1,14 +1,15 @@
 # Django and Web Server
 Django
-# gunicorn
-# uvicorn
-# asgiref
+gunicorn
+uvicorn
+asgiref
 
 # Django REST Framework
 djangorestframework
 djangorestframework-simplejwt
 djoser
 drf-nested-routers
+drf-yasg
 
 # # Real-time communication
 # python-socketio
