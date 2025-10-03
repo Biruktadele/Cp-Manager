@@ -167,6 +167,7 @@ load_dotenv()
 # tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
 # tmpPostgres = urlparse('postgresql://neondb_owner:npg_SqsDG5tkXo9n@ep-wandering-rain-afvy15it-pooler.c-2.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require')
 if not os.environ.get("DATABASE_URL"):
+    print("Failed")
     DATABASES = {
     'default': dj_database_url.config(
         default='sqlite:///db.sqlite3',  # Good for local development fallback
