@@ -12,6 +12,6 @@ python manage.py collectstatic --no-input
 python manage.py migrate
 
 # Run gunicorn
-python apscheduler_runner.py
+# python apscheduler_runner.py
 # uvicorn ChatApi.asgi:application --host 0.0.0.0 --port 8001 --reload
-python manage.py runserver
+# python manage.py runserver
